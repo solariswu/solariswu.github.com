@@ -24,7 +24,8 @@ tags: [leetcode, algorithm]
 public static void Local_Bit_Sieve(int nth)
 {
     int startTime = Environment.TickCount;
-    int limit = nth < 6 ? 25 :(int)(nth * (Math.Log(nth) + Math.Log(Math.Log(nth))));
+    int limit = nth < 6 ? 25 :(int)(nth * (Math.Log(nth) + 
+                                           Math.Log(Math.Log(nth))));
     int sqrt = (int) Math.Sqrt(limit) + 1;
     
     //Get all primes which are less than \sqrt{limit}
@@ -67,7 +68,8 @@ public static void Local_Bit_Sieve(int nth)
         foreach (var sPrime in smallPrimes)
         {
             int initValue = low % sPrime;
-            for (int i = (initValue == 0 ? initValue : sPrime - initValue); i < high; i += sPrime)
+            for (int i = (initValue == 0 ? initValue : sPrime - initValue); 
+                i < high; i += sPrime)
             {
                 primeSeg[i >> 5] |= (uint) 1 << (i & 31);
             }
@@ -81,7 +83,8 @@ public static void Local_Bit_Sieve(int nth)
 
         if (allPrimes.Count() > nth)
         {
-            Console.WriteLine("The {0}th_prime is:{1} SpentTime:{2}ms",nth, allPrimes[nth-1],
+            Console.WriteLine("The {0}th_prime is:{1} SpentTime:{2}ms",
+                nth, allPrimes[nth-1],
                 Environment.TickCount - startTime);
             break;
         }
