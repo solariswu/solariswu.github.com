@@ -1,18 +1,15 @@
 ---
 layout: post
-title: "leetcode #204 Count Primes"
+title: "leetcode #204   Count Primes"
 description: ""
-category: 
+category: algorithm
 tags: [leetcode, algorithm]
 ---
 ### Description:
 
   Count the number of prime numbers less than a non-negative number, n.
 
-### Credits:
-  Special thanks to @mithmatt for adding this problem and creating all test cases.
-
-### resolvation
+### Solution:
   1. Sieve of Eratoshenes
   2. Test from p*p till sqr(n), remove all the times times of p
   3. Optimized -> 
