@@ -6,10 +6,10 @@ category:
 tags: [android, UI, fragment, interview]
 ---
 
-## Parcable vs Serializable
+### Parcable vs Serializable
 Parcable has better performance than Serializable, but it is not consistant between different version of Android, so it's good to use parcable between android app's internal components, ALDI and intent, bundle. Serializable is more suitable for storing data consistantly in files or transferring data between apps and server.
 
-## How to keep and restore the user data while changing the screen landscape
+### How to keep and restore the user data while changing the screen landscape
 * Activity - onSaveInstanceState / onRestoreInstanceState
 
 ```java
@@ -40,7 +40,7 @@ The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landsc
 
 * Fragment - setRetainInstance (true); then onCreate & onDestroy not called, the Fragment is kept during screen rotation.
 
-## Pass parameter values between activity and fragments
+### Pass parameter values between activity and fragments
 * Use Callback
 ```java
 
