@@ -54,6 +54,7 @@ The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landsc
 Bundle args = new Bundle();
 args.putInt("type",1);
 accountRechargeListFragment.setArguments(args);
+
 //fragment：
 type = getArguments().getInt("type");
 ```
