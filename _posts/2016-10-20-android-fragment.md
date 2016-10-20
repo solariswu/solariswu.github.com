@@ -59,4 +59,8 @@ accountRechargeListFragment.setArguments(args);
 type = getArguments().getInt("type");
 ```
 
+`onAttach` is the point when adding fragment to activity, may do the initialization operations inside it and do the deinitialize in `onDetach`.
+
+`onActivityCreated` is the best place to call getArguments whick may have the same effect as the construct of fragment.
+
 Ref:   <a href="http://www.gongmingqm10.net/blog/2015/12/16/you-should-know-about-android-rotate/"> You should know about android rotate </a>
