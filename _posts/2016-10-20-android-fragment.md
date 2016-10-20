@@ -10,7 +10,8 @@ tags: [android, UI, fragment, interview]
 Parcable has better performance than Serializable, but it is not consistant between different version of Android, so it's good to use parcable between android app's internal components, ALDI and intent, bundle. Serializable is more suitable for storing data consistantly in files or transferring data between apps and server.
 
 ## How to keep and restore the user data while changing the screen landscape
-1. Activity - onSaveInstanceState / onRestoreInstanceState
+* Activity - onSaveInstanceState / onRestoreInstanceState
+
 ```java
 private boolean shouldSaveData = false;
 
@@ -30,13 +31,14 @@ protected void onRestoreInstanceState(Bundle savedInstanceState) {
     shouldSaveData = savedInstanceState.getBoolean(KEY_SHOULD_SAVE_DATA);
     Log.i(TAG, "@@Activity onRestoreInstanceState@@" + this.toString());
 }
+
 ```
 
 The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landscape` –> `onPause` –> `onSaveInstanceState` –> `onStop` –> `onDestroy` –> `onCreate` –> `onStart` –> `onRestoreInstanceState` –> `onResume`; 
 
-2. Dialog - use DialogFragment  onSaveInstanceState / onActiviyCreated (restore)
+* Dialog - use DialogFragment  onSaveInstanceState / onActiviyCreated (restore)
 
-3. Fragment - setRetainInstance (true); then onCreate & onDestroy not called, the Fragment is kept during landscape switching.
+* Fragment - setRetainInstance (true); then onCreate & onDestroy not called, the Fragment is kept during landscape switching.
 
 
 
