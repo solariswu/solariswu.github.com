@@ -62,4 +62,4 @@ type = getArguments().getInt("type");
 
 ```
 
-Ref:   <a href="http://www.gongmingqm10.net/blog/2015/12/16/you-should-know-about-android-rotate/"> you should know about android rotate </a>
+Ref:   <a href="http://www.gongmingqm10.net/blog/2015/12/16/you-should-know-about-android-rotate/"> You should know about android rotate </a>
