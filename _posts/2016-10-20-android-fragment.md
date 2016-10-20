@@ -34,14 +34,12 @@ protected void onRestoreInstanceState(Bundle savedInstanceState) {
 
 ```
 
-The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landscape` –> `onPause` –> `onSaveInstanceState` –> `onStop` –> `onDestroy` –> `onCreate` –> `onStart` –> `onRestoreInstanceState` –> `onResume`; 
+#### The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landscape` –> `onPause` –> `onSaveInstanceState` –> `onStop` –> `onDestroy` –> `onCreate` –> `onStart` –> `onRestoreInstanceState` –> `onResume`; 
 
 * Dialog - use DialogFragment  onSaveInstanceState / onActiviyCreated (restore)
 
-* Fragment - setRetainInstance (true); then onCreate & onDestroy not called, the Fragment is kept during landscape switching.
+* Fragment - setRetainInstance (true); then onCreate & onDestroy not called, the Fragment is kept during screen rotation.
 
 
 
-
-
-http://www.gongmingqm10.net/blog/2015/12/16/you-should-know-about-android-rotate/
+ref: <a href="http://www.gongmingqm10.net/blog/2015/12/16/you-should-know-about-android-rotate/"> you should know about android rotate </a>
