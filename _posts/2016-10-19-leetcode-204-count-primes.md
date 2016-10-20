@@ -3,7 +3,7 @@ layout: post
 title: "leetcode #204   Count Primes"
 description: ""
 category: algorithm
-tags: [leetcode, algorithm]
+tags: [algorithm]
 ---
 ### Description:
 
