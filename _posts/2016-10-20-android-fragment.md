@@ -42,6 +42,7 @@ The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landsc
 
 ### Pass parameter values between activity and fragments
 * Use Callback
+
 ```java
 
 ((MainActivity) getActivity()).getParams();
@@ -49,6 +50,7 @@ The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landsc
 ```
 
 * Use bundle and setArguments
+
 ```java
 
 //activity：
