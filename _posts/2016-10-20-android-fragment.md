@@ -44,22 +44,18 @@ The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landsc
 * Use Callback
 
 ```java
-
 ((MainActivity) getActivity()).getParams();
-
 ```
 
 * Use bundle and setArguments
 
 ```java
-
 //activity：
 Bundle args = new Bundle();
 args.putInt("type",1);
 accountRechargeListFragment.setArguments(args);
 //fragment：
 type = getArguments().getInt("type");
-
 ```
 
 Ref:   <a href="http://www.gongmingqm10.net/blog/2015/12/16/you-should-know-about-android-rotate/"> You should know about android rotate </a>
