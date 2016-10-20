@@ -31,6 +31,7 @@ protected void onRestoreInstanceState(Bundle savedInstanceState) {
     shouldSaveData = savedInstanceState.getBoolean(KEY_SHOULD_SAVE_DATA);
     Log.i(TAG, "@@Activity onRestoreInstanceState@@" + this.toString());
 }
+
 ```
 
     The lift cycle is `onCreate` –> `onStart` –> `onResume` –> `Running/landscape` –> `onPause` –> `onSaveInstanceState` –> `onStop` –> `onDestroy` –> `onCreate` –> `onStart` –> `onRestoreInstanceState` –> `onResume`; 
