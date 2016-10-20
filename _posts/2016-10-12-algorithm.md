@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Algorithm"
-description: "some resources of coding algrithm"
+description: "some resources of coding algorithm"
 category: 
-tags: [algrithm, software development, interview]
+tags: [algorithm, software development, interview]
 ---
 Here is the page link of a series of blog talking about classic algrithm.<br>
 <br>
