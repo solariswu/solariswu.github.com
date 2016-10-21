@@ -7,9 +7,9 @@ tags: [android, interview]
 ---
 
 <figure class="third">
-	<a href="images/activity_lifecycle.png><img src="images/activity_lifecycle.png" /></a>
-	<a href="images/fragment_lifecycle_2.png><img src="images/fragment_lifecycle_2.png" /></a>
-	<a href="images/fragment_activity_compare.png><img src="images/fragment_activity_compare.png" /></a>
+	<a href="images/activity_lifecycle.png><img src="images/activity_lifecycle.png"></a>
+	<a href="images/fragment_lifecycle_2.png><img src="images/fragment_lifecycle_2.png"></a>
+	<a href="images/fragment_activity_compare.png><img src="images/fragment_activity_compare.png"></a>
 	<figcaption> Activity and Fragment lifecycles </figcaption>
 </figure>
 
