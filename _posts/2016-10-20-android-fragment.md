@@ -7,10 +7,10 @@ tags: [android, interview]
 ---
 
 <figure class="third">
-	<img src="activity_lifecycle.png" />
-	<img src="fragment_lifecycle_2.png" />
-	<img src="fragment_activity_compare.png" />
-	<figcaption> acitivity and fragment lifecycle </figcaption>
+	<img src="images/activity_lifecycle.png" />
+	<img src="images/fragment_lifecycle_2.png" />
+	<img src="images/fragment_activity_compare.png" />
+	<figcaption> Activity and Fragment lifecycles </figcaption>
 </figure>
 
 ### Parcable vs Serializable
