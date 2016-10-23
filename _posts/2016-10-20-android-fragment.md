@@ -13,9 +13,6 @@ tags: [android, interview]
 	<figcaption> Activity and Fragment lifecycles </figcaption>
 </figure>
 
-### Parcable vs Serializable
-Parcable has better performance than Serializable, but it is not consistant between different version of Android, so it's good to use parcable between android app's internal components, ALDI and intent, bundle. Serializable is more suitable for storing data consistantly in files or transferring data between apps and server.
-
 ### How to keep and restore the user data while changing the screen landscape
 * Activity - onSaveInstanceState / onRestoreInstanceState
 
