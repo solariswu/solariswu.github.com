@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android interview questions"
+title: "Android Interview Questions"
 description: ""
 category: 
 tags: [Android, interview]
