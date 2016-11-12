@@ -6,7 +6,7 @@ category:
 tags: []
 ---
 
-```
+`
 Input:
 "abccccdd"
 
@@ -15,7 +15,7 @@ Output:
 
 Explanation:
 One longest palindrome that can be built is "dccaccd", whose length is 7.
-```
+`
 
 ```c++
     i = 0;
