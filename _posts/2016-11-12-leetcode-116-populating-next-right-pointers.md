@@ -13,7 +13,7 @@ tags: [algrithem, leetcode]
      / \  / \                 / \  / \
     4  5  6  7               4->5->6->7 -> NULL
 
-```
+```c
         while (p && p->left) {
             p->left->next = p->right;
             p->right->next = NULL;
