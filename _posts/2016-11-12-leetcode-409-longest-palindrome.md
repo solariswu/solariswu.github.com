@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-## Leetcode 409 Longest Palindrome 
 
 ```
 Input:

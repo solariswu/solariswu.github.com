@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [algrithem, leetcode]
 ---
-## Leetcode 116. Populating Next Right Pointers in each node
 
          1                        1 -> NULL
        /  \                     /  \ 
