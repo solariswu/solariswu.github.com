@@ -6,55 +6,77 @@ category:
 tags: []
 ---
 
-## Add Android Emulator for Jenkins to run AndroidUnitTest
+## Config Jenkins
+1. Open the Jenkins Server from browser with http://[SERVER_IP]:8080/
+2. Input initial Admin Password (Get it from the VM)
+3. Install suggested plugins ... wait ...
+4. When Jenkins page show 
 
-* Add libglu on VM
+	Choose **System Management** -> **Plugins Management**
 
-```
-$ sudo apt-get install libglu1
-```
+	Check following plugins are installed, most of them are already installed in step 3.
+	
+	* git client plugin 
+	* git plugin 
+	* Gradel plugin
+	* Bitbucket
+	* Bitbucket Build Status Notifier Plugin
+	* Bitbucket Pullrequest Builder Plugin
+	* Android Lint Plugin*
+	* Android Emulator Plugin*
+	* Google Cloud Messaging Notification Plugin*
+	* Google Play Android Publisher Plugin*
 
-* Install 
-Google APIs ARM EABI v7a System Image, Android API 24, revision 10
+	> \* - *optional plugins*
 
-```
-$ android update sdk -a --no-ui --filter <number>
-```
+	Choose **System Management** -> **Global Tool Configuration**
 
-* Config Android Emulator Plugin on Jenkins (Only runnable on 3.5G Memory Azure)
-	* In Jenkins Job Settings
-	* **Build Enviroment** 
-		* Check **Run emulator with properties**
-		* [**Android OS Version**] *Android-24*
-		* [**Screen density**] *160*
-		* [**Screen resolution**] *HVGA*
-		* [**Device locale**] *en_US*
-		* [**SD card size**] *32M*
-		* [**Target ABI**] *google_apis/armeabi-v7a*
-		* [**Emulator name suffix**] *Nexus5*
-		* Check **Reset emulator state at start-up**
-	* **Build**
-		* Check **Add Build Step** -> **Install Android Package**
-		* [**APK file**] *app/build/outputs/apk/app-debug.apk*
-		* Check **Add Build Step** -> **Run Android monkey tester**
-		* [**Package ID**] *com.moroku.clients.smartsaver*
-		* [**Event count**] 5000
-		* [**Delay between event**] 100
-		* Check **Add post Build action** -> **Publish Android monkey tester result
-		* TODO AndroidUnitTest
+	* Gradle Installation -> auto install
+	* Git Installation -> auto install
+	* JDK Installation -> auto install (need oracle account/pwd)
+	* Maven Installation -> auto install
+	
+	Choose **Credentials** -> **System** -> **Global credentials (unrestricted)** -> **Add Credentials**
+	
+	* Choose **Kind** -> ```SSH Username with private key```
+	* Generate a SSH key pairs, put private key here and public key in **Bitbucket Settings** -> **SSH keys**
+	* You may directly input the private key or a file under Jenkins Server's path.
 
+--------
+	
 
+## Setup Jenkins Build Job
+1. Open Jenkins in Browser with url  **https://[SERVER_IP]:8080/**
+2. Create a new task with 'free style project'
+3. In **Build trigger**
+	* Check 'Build when a change is pushed to BitBucket' 
+4. In **Source Code Management**
+	* Input the Git url in 'Repository URL'
+	* Select the private key you've input 
+	* Input the branches for build
+5. In **Build**
+	* Select 'Invoke Gradle script'
+	* Select 'Use Gradle Wrapper'
+	* Check 'From Root Build Script Dir'
+	* Input '*clean build* ' in 'Switches'
 
-## Done
-New push to the Bitbucket Repo will trigger a Jenkins build now.
+------
 
-*[Note:] First time build may have error like*
+## Settings for Jenkins in Bitbucket
 
-> "A problem occurred configuring project ':app'.
-> Failed to install the following SDK components:
-> 
->   [Solver for ConstraintLayout 1.0.0-beta4, ConstraintLayout for Android 1.0.0-beta4]
-  Please install the missing components using the SDK manager in Android Studio."
+* Config Jenkins build for every code push to specified branches.
 
+	In Bitbucket Repository's **Settings** -> **Webhooks**
+ 
+	* Add new webhook 'URL' -> http://[SERVER_IP]:8080/bitbucket-hook/
+	* Check the 'Skip certificate verfication' 
+	* Save the new webhook
 
-No Actions needs to do, try again, it will be installed automatically.
+* Config [Bitbucket Cloud Build Status Notifier](https://wiki.jenkins-ci.org/display/JENKINS/Bitbucket+Cloud+Build+Status+Notifier+Plugin)
+
+* Config [Bitbucket Pull Requester Plugin](https://github.com/nishio-dens/bitbucket-pullrequest-builder-plugin)
+
+> Pull Request plugin is not actually working in my test
+
+-------
+
