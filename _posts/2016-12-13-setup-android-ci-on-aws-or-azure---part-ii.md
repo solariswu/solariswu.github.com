@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setup Android CI on AWS or Azure   part II"
+title: "Setup Android CI on AWS or Azure - part 2"
 description: ""
 category: 
 tags: []
