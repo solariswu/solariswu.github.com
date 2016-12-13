@@ -74,13 +74,13 @@ Select the tools needed and platforms' number
 	
 Here is the list for reference
 	
-* Android SDK Tools, revision 25.2.3
-* Android SDK Platform-tools, revision 25.0.1
-* Android SDK Build-tools, revision 25.0.1
-* SDK Platform Android 7.1.1, API 25, revision 2
-* Google Play services, revision 38
-* Google Repository, revision 40
-* Android Support Repository, revision 40
+> * Android SDK Tools, revision 25.2.3
+> * Android SDK Platform-tools, revision 25.0.1
+> * Android SDK Build-tools, revision 25.0.1
+> * SDK Platform Android 7.1.1, API 25, revision 2
+> * Google Play services, revision 38
+> * Google Repository, revision 40
+> * Android Support Repository, revision 40
 
 * #### Install Git
 
