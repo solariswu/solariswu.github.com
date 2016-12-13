@@ -24,19 +24,19 @@
 
 
 ## Install Jenkins on VM
-* ####Login to the VM by IP from your local machine
+* #### Login to the VM by IP from your local machine
 
 ```
 $ ssh ubuntu@[SERVER_IP]
 ```
 
-* ####Download and Install Jenkins
+* #### Download and Install Jenkins
    
 ```
    $ wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
-	$ sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
-	$ sudo apt-get update
-	$ sudo apt-get install jenkins
+   $ sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+   $ sudo apt-get update
+   $ sudo apt-get install jenkins
 ```
    Restart VM to apply upgrades
    
@@ -50,7 +50,7 @@ $ ssh ubuntu@[SERVER_IP]
    $ sudo shutdown -r now
 ```
    
-* ####Install Apache Webserver
+* #### Install Apache Webserver
 	
 ```
 	$ sudo apt-get install aptitude
@@ -58,12 +58,14 @@ $ ssh ubuntu@[SERVER_IP]
 	$ sudo a2enmod proxy
 	$ sudo a2enmod proxy_http
 ```
+
 	Change Jenkins port to 8080
 	
 ```
 	$ cd /etc/apache2/sites-available
 	$ sudo vim jenkins.conf
 ```
+
 	Paste following code to the jenkins.conf file
 	
 ```
@@ -82,7 +84,7 @@ $ ssh ubuntu@[SERVER_IP]
 	</VirtualHost>
 ```
 
-* ####Start Jenkins
+#### * Start Jenkins
 	
 ```
 	$ sudo a2ensite jenkins
