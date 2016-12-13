@@ -189,9 +189,9 @@ count=0
 * #### Install Android SDK and platform compontents
 
 ```
-	$ cd /opt/android-sdk-linux/tools/
+$ cd /opt/android-sdk-linux/tools/
 List all the sdk tools
-	$ android list sdk --all
+$ android list sdk --all
 ```
 
 Change to super user
@@ -215,21 +215,21 @@ Here is the list for reference
 * #### Install Git
 
 ```
-	$ sudo apt-get install git-core
+$ sudo apt-get install git-core
 ```
 
 * #### Install Oracle JDK 8
 
 ```
-	$ sudo add-apt-repository ppa:webupd8team/java
-	$ sudo apt-get update
-	$ sudo apt-get install oracle-java8-installer
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get install oracle-java8-installer
 ```	
 	
 * #### Install 32bit compatible libs for Anroid emulator
 
 ```
-	$ sudo apt-get install -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
+$ sudo apt-get install -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
 ```
 
 * #### Restart VM
@@ -331,17 +331,16 @@ $ android update sdk -a --no-ui --filter <number>
 ## Done
 New push to the Bitbucket Repo will trigger a Jenkins build now.
 
-*Note*:
+*[Note:] First time build may have error like*
 
-> First time build may have error like
-> 
 > "A problem occurred configuring project ':app'.
 > Failed to install the following SDK components:
 > 
 >   [Solver for ConstraintLayout 1.0.0-beta4, ConstraintLayout for Android 1.0.0-beta4]
   Please install the missing components using the SDK manager in Android Studio."
->
-> No Actions needs to do, try again, it will be installed automatically.
+
+
+No Actions needs to do, try again, it will be installed automatically.
 
 
 
