@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Setup Android CI on AWS or Azure"
+description: ""
+category: 
+tags: []
+---
+
 ## Creat the VM on Azure
 * Login with your ID on Microsoft Azure. Select Virtual Machines a.k.a VM
 ![VM](../images/azure/VM.png)
@@ -59,14 +67,14 @@ $ ssh ubuntu@[SERVER_IP]
 	$ sudo a2enmod proxy_http
 ```
 
-	Change Jenkins port to 8080
+Change Jenkins port to 8080
 	
 ```
 	$ cd /etc/apache2/sites-available
 	$ sudo vim jenkins.conf
 ```
 
-	Paste following code to the jenkins.conf file
+Paste following code to the jenkins.conf file
 	
 ```
 	<VirtualHost *:80>
@@ -84,7 +92,7 @@ $ ssh ubuntu@[SERVER_IP]
 	</VirtualHost>
 ```
 
-#### * Start Jenkins
+* #### Start Jenkins
 	
 ```
 	$ sudo a2ensite jenkins
@@ -136,20 +144,23 @@ $ ssh ubuntu@[SERVER_IP]
 
 SSH to the VM
 
-#### * Install SDK tools
+* #### Install SDK tools
 
 ```
 $ cd /opt
 $ sudo wget <latest android sdk>
 ``` 
+
 <span style="color:grey"> eg.
 $ sudo wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz</span>
+
 
 ```
 $ sudo tar zxvf <downloaded android sdk .tgz file>
 $ sudo rm <downloaded android sdk .tgz file>
 ```
-#### * Add Android SDK into environment variable 
+
+* #### Add Android SDK into environment variable 
 
 ```
 $ cd /etc/profile.d
@@ -175,7 +186,7 @@ Add following content into repositories.cfg
 count=0
 ```
 
-#### * Install Android SDK and platform compontents
+* #### Install Android SDK and platform compontents
 
 	$ cd /opt/android-sdk-linux/tools/
 List all the sdk tools
@@ -200,29 +211,29 @@ Here is the list for reference
 * Google Repository, revision 40
 * Android Support Repository, revision 40
 
-#### * Install Git
+* #### Install Git
 
 	$ sudo apt-get install git-core
 
-#### * Install Oracle JDK 8
+* #### Install Oracle JDK 8
 
 	$ sudo add-apt-repository ppa:webupd8team/java
 	$ sudo apt-get update
 	$ sudo apt-get install oracle-java8-installer
 	
-#### * Install 32bit compatible libs for Anroid emulator
+* #### Install 32bit compatible libs for Anroid emulator
 
 	$ sudo apt-get install -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1
 
 	
-#### * Restart VM
+* #### Restart VM
 
 ```
 $ sudo shutdown -r now
 ```
 	
 
-#### * Copy Android License files from LOCAL Machine to VM
+* #### Copy Android License files from LOCAL Machine to VM
 
 Due to some SDK components require UI to accept license and it is not applicable on VM command line. Do following command from you local android SDK folder.
 
