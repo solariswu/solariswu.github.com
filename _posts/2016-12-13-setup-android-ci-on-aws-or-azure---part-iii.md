@@ -32,11 +32,12 @@ $ sudo rm <downloaded android sdk .tgz file>
 $ cd /etc/profile.d
 $ sudo vim android.sh
 ```
+
 Add following into android.sh
 
 ```
-export ANDROID_HOME="/opt/android-sdk-linux"
-export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+	export ANDROID_HOME="/opt/android-sdk-linux"
+	export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 ```
 
 Add Repositories config
@@ -48,8 +49,8 @@ $ sudo vim /var/lib/jenkins/.android/repositories.cfg
 Add following content into repositories.cfg
 
 ```
-### User Sources for Android SDK Manager
-count=0
+	### User Sources for Android SDK Manager
+	count=0
 ```
 
 * #### Install Android SDK and platform compontents
