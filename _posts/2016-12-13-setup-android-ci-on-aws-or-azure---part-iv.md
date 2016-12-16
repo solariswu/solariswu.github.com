@@ -80,3 +80,20 @@ tags: []
 
 -------
 
+## Hide Android Signkey from Console
+
+* Install [EnvInject](https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin) Jenkins plugin
+* In Jenkins Job **configure** -> **Build Environment**
+	* check **Inject environment variables to the build process**
+	* put following content in **Properties Content**
+	
+	```
+	KEYSTORE=${FILE_KEYSTORE}
+	KEYSTORE_PASSWORD=${PASSWORD_KEYSTORE}
+	KEY_ALIAS=$ALIAS_KEY
+	KEY_PASSWORD=${PASSWORD_KEY}
+	```
+	* check **Inject passwords to the build as environment variables**
+	* put the password variables into Job passwords, eg.
+	
+	![password](../images/azure/passwords.png)
